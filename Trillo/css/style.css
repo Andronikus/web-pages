@@ -46,7 +46,6 @@ body {
   font-size: 1.4rem;
   background: #fff;
   border-bottom: var(--color-grey-light-2);
-  border-bottom: 1px solid blue;
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -188,3 +187,10 @@ body {
   font-size: 1.2rem;
   color: var(--color-grey-light-4);
   padding: 2.5rem; }
+
+.gallery {
+  display: flex; }
+  .gallery__img {
+    width: 100%;
+    height: 100%;
+    display: block; }
