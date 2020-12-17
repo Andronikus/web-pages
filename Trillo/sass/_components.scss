@@ -41,7 +41,7 @@
     }
   }
 
-  &__input:focus+&__button {
+  &__input:focus + &__button {
     background-color: var(--color-grey-light-3);
   }
 
@@ -70,7 +70,7 @@
   align-self: stretch;
 
   // all direct children from user-nav
-  &>* {
+  & > * {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +78,7 @@
     padding: 0 1rem;
   }
 
-  &>*:hover {
+  & > *:hover {
     background-color: var(--color-grey-light-2);
   }
 
@@ -189,7 +189,6 @@
 // Gallery
 // -----------------------------------------
 .gallery {
-
   display: flex;
 
   &__img {
@@ -205,7 +204,7 @@
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
 
   &__heading {
     font-size: 2.25rem;
