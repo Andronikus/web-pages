@@ -302,3 +302,46 @@
     box-shadow: none;
   }
 }
+
+// -----------------------------------------
+// Paragraph
+// -----------------------------------------
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+// -----------------------------------------
+// List
+// -----------------------------------------
+.list {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item::before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+
+    //older browsers
+    // background-image: url("../img/chevron-small-right.svg");
+    // background-size: cover;
+
+    // recent browsers
+    background-color: var(--color-primary);
+    mask-image: url("../img/chevron-small-right.svg");
+    mask-size: cover;
+  }
+}
