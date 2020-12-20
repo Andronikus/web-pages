@@ -16,6 +16,12 @@
 
   flex: 0 0 40%;
 
+  @media screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background: var(--color-grey-light-2);
+  }
+
   &__input {
     font-family: inherit;
     font-weight: inherit;
@@ -33,6 +39,10 @@
       width: 100%;
       background: var(--color-grey-light-3);
       outline: none;
+
+      @media screen and (max-width: $bp-smallest) {
+        background: var(--color-grey-light-2);
+      }
     }
 
     &::-webkit-input-placeholder {
@@ -107,6 +117,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: $bp-smallest) {
+      top: 0.3rem;
+      right: 1.1rem;
+    }
+
+    @media screen and (max-width: $bp-xsmall) {
+      top: 0.3rem;
+      right: 1.1rem;
+    }
   }
 
   &__user-photo {
@@ -124,11 +144,33 @@
   list-style-type: none;
   margin-top: 3.5rem;
 
+  @media screen and (max-width: $bp-medium) {
+    margin-top: 0;
+    display: flex;
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: $bp-xsmall) {
+    font-size: 1rem;
+  }
+
   &__item {
     position: relative;
 
+    @media screen and (max-width: $bp-medium) {
+      flex: 1;
+    }
+
+    @media screen and (max-width: $bp-medium) {
+      margin-bottom: 0;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -160,7 +202,6 @@
     text-decoration: none;
     text-transform: uppercase;
     color: var(--color-grey-light-1);
-    display: block;
     padding: 1.5rem 3.5rem;
 
     display: flex;
@@ -168,6 +209,19 @@
 
     position: relative;
     z-index: 10;
+
+    @media screen and (max-width: $bp-medium) {
+      justify-content: center;
+    }
+
+    @media screen and (max-width: $bp-small) {
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: $bp-small) {
+      height: 100%;
+      text-align: center;
+    }
   }
 
   &__icon {
@@ -175,6 +229,11 @@
     width: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; // color of the element or his parent
+
+    @media screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 0.8rem;
+    }
   }
 }
 
@@ -183,6 +242,10 @@
   font-size: 1.2rem;
   color: var(--color-grey-light-4);
   padding: 2.5rem;
+
+  @media screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 // -----------------------------------------
@@ -206,12 +269,29 @@
   align-items: center;
   border-bottom: var(--line);
 
+  @media screen and (max-width: $bp-xsmall) {
+    font-size: 1rem;
+  }
+
   &__heading {
     font-size: 2.25rem;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 2rem;
+    }
+
+    @media screen and (max-width: $bp-smallest) {
+      font-size: 1.6rem;
+    }
+
+    @media screen and (max-width: $bp-xsmall) {
+      font-size: 1rem;
+      padding: 1.5rem 1rem;
+    }
   }
 
   &__stars {
@@ -224,6 +304,11 @@
     width: 1.75rem;
     height: 1.75rem;
     fill: var(--color-primary);
+
+    @media screen and (max-width: $bp-smallest) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 
   &__icon-location {
@@ -353,6 +438,8 @@
     background-color: var(--color-primary);
     mask-image: url("../img/chevron-small-right.svg");
     mask-size: cover;
+    -webkit-mask-image: url("../img/chevron-small-right.svg");
+    -webkit-mask-size: cover;
   }
 }
 
@@ -397,6 +484,11 @@
   padding: 3.5rem;
   position: relative;
   overflow: hidden;
+  width: 100%;
+
+  @media screen and (max-width: $bp-medium) {
+    padding: 2rem;
+  }
 
   &__text {
     margin-bottom: 2rem;
@@ -458,11 +550,22 @@
   text-align: center;
   padding: 3.5rem 0;
 
+  @media screen and (max-width: $bp-medium) {
+    padding: 2.5rem;
+  }
+
   &__text {
     font-size: 2rem;
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
+    @media screen and (max-width: $bp-smallest) {
+      font-size: 1.6rem;
+    }
   }
 }
 
