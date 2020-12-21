@@ -291,10 +291,30 @@ body {
 
 .gallery {
   display: flex; }
+  .gallery__photo {
+    position: relative;
+    display: block;
+    overflow: hidden; }
   .gallery__img {
     width: 100%;
     height: 100%;
     display: block; }
+  .gallery__caption {
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--color-grey-light-2);
+    font-size: 1.4rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: top 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .gallery__photo:hover .gallery__caption {
+    top: 0; }
 
 .overview {
   display: flex;
@@ -408,11 +428,16 @@ body {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background-color: var(--color-primary);
-    mask-image: url("../img/chevron-small-right.svg");
-    mask-size: cover;
-    -webkit-mask-image: url("../img/chevron-small-right.svg");
-    -webkit-mask-size: cover; }
+    background-image: url("../img/chevron-small-right.svg");
+    background-size: cover; }
+    @supports (mask-image: url()) or (-webkit-mask-image: url()) {
+      .list__item::before {
+        background-color: var(--color-primary);
+        mask-image: url("../img/chevron-small-right.svg");
+        mask-size: cover;
+        -webkit-mask-image: url("../img/chevron-small-right.svg");
+        -webkit-mask-size: cover;
+        background-image: none; } }
 
 .recommend {
   display: flex;
