@@ -2,6 +2,8 @@ FROM node:alpine
 
 WORKDIR /app
 
+RUN npm install netlify-cli -g
+
 COPY package.json .
 
 RUN npm install

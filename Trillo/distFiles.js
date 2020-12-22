@@ -30,9 +30,9 @@ const copyImgFiles = async () => {
 
     const imgFiles = (await fsPromises.readdir(imgDirPath)) || [];
 
-    console.log(imgFiles);
+    console.log(imgFiles.length);
 
-    if (imgFiles.count > 0) {
+    if (imgFiles.length > 0) {
       imgFiles.forEach(async (imgFile) => {
         try {
           await fsPromises.copyFile(
@@ -51,7 +51,7 @@ const copyImgFiles = async () => {
 
 const copyHTMLFiles = async () => {
   const htmlSrc = path.join(".", "index.html");
-  const htmlDest = path.join(".", "index.html");
+  const htmlDest = path.join(".", "dist", "index.html");
 
   try {
     await fsPromises.copyFile(htmlSrc, htmlDest);
